@@ -14,7 +14,11 @@ class CreateDetalleHdrsTable extends Migration
     public function up()
     {
         Schema::create('detalle_hdrs', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('producto');
+            $table->integer('cantidad');
+            $table->string('token_cliente',250);
             $table->timestamps();
         });
     }

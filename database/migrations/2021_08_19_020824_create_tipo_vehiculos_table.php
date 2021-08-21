@@ -14,7 +14,10 @@ class CreateTipoVehiculosTable extends Migration
     public function up()
     {
         Schema::create('tipo_vehiculos', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('marca',100);
+            $table->string('modelo',100);
+            $table->string('patente',50);
             $table->timestamps();
         });
     }

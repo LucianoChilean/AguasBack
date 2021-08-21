@@ -14,7 +14,8 @@ class CreateTipoOperacionsTable extends Migration
     public function up()
     {
         Schema::create('tipo_operacions', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('nombre',150);
             $table->timestamps();
         });
     }

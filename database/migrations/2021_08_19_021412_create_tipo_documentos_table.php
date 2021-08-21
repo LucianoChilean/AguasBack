@@ -14,7 +14,8 @@ class CreateTipoDocumentosTable extends Migration
     public function up()
     {
         Schema::create('tipo_documentos', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('nombre',100);
             $table->timestamps();
         });
     }

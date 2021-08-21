@@ -14,7 +14,10 @@ class CreateRegionsTable extends Migration
     public function up()
     {
         Schema::create('regions', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->integer('order');
+            $table->string('nombre',150);
+            $table->string('ordinal_symbol',150);
             $table->timestamps();
         });
     }

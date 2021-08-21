@@ -19,8 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('apellido_paterno',150);
             $table->string('apellido_materno',150);
             $table->string('mail',100);
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password',250);
             $table->rememberToken();
             $table->timestamps();
         });

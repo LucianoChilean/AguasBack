@@ -20,9 +20,9 @@ class CreateDatosEmpresasTable extends Migration
             $table->string('giro',200);
             $table->string('telefono',15);
             $table->string('direccion',250);
-            $table->unsignedBigInteger('region');
+            $table->BigInteger('region_id');
             $table->foreign('region_id')->references('id')->on('region');
-            $table->unsignedBigInteger('comuna');
+            $table->BigInteger('comuna_id');
             $table->foreign('comuna_id')->references('id')->on('comuna');
             $table->timestamps();
         });

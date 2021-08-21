@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class detalle extends Model
 {
     use HasFactory;
+
+        /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'producto_id',
+        'cantidad',
+        'descripcion',
+    ];
 }

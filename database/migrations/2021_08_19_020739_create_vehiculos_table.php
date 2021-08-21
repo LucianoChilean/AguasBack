@@ -15,8 +15,10 @@ class CreateVehiculosTable extends Migration
     {
         Schema::create('vehiculos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('users_id');
+            $table->BigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users');
+            $table->BigInteger('tipo_vehiculo_id');
+            $table->foreign('tipo_vehiculo_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

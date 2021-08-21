@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class tipo_operacion extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nombre',
+    ];
 }

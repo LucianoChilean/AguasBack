@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class region extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'order',
+        'nombre',
+        'ordina_symbol',
+    ];
 }

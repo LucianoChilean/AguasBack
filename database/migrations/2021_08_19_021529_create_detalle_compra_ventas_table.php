@@ -15,7 +15,7 @@ class CreateDetalleCompraVentasTable extends Migration
     {
         Schema::create('detalle_compra_ventas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('proveedor');
+            $table->BigInteger('proveedor_id');
             $table->foreign('proveedor_id')->references('id')->on('proveedor');
             $table->string('token_cliente',250);
             $table->timestamps();

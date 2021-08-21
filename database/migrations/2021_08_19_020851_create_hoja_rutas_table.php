@@ -15,9 +15,9 @@ class CreateHojaRutasTable extends Migration
     {
         Schema::create('hoja_rutas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('users_id');
+            $table->BigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users');
-            $table->unsignedBigInteger('detalle_hdr_id');
+            $table->BigInteger('detalle_hdr_id');
             $table->foreign('detalle_hdr_id')->references('id')->on('detalle_hdr');
             $table->timestamps();
         });

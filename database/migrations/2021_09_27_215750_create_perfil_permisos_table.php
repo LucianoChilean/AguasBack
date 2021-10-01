@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePermisoUsuariosTable extends Migration
+class CreatePerfilPermisosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreatePermisoUsuariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('permiso_usuarios', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('perfil_permisos', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->BigInteger('perfil_id');
             $table->foreign('perfil_id')->references('id')->on('perfil');
-            $table->BigInteger('users_id');
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->BigInteger('permiso_id');
+            $table->foreign('permiso_id')->references('id')->on('permisos');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreatePermisoUsuariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permiso_usuarios');
+        Schema::dropIfExists('perfil_permisos');
     }
 }

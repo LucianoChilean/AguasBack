@@ -8,22 +8,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 
-class UserController extends Controller
-{
+class UserController extends Controller{
    
-    public function index()
-    {
+    public function index(){
         return User::all();
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
     
         $json = $request->input('json',null);
         $params = json_decode($json); //objeto
         $params_array = json_decode($json, true);//array
        
-
         $params_array = array_map('trim', $params_array);
 
        
@@ -246,8 +242,7 @@ class UserController extends Controller
 
     }
 
-    public function delete(Request $request, $id)
-    {
+    public function delete(Request $request, $id){
         $user = User::find($id);
 
         if(is_object($user)){
